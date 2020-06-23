@@ -1,4 +1,19 @@
 #include "CForet.h"
+/**************************************************************
+*
+* Reproduction et diffusion interdites.
+* Developpé par INSA Rennes - 5 CDTI : ANTUNES / GROLLET / BAILLY
+* Projet ROBIOT
+*
+* SOURCE : CForet.cpp
+* PRESENTATION :  Fichier source de la géolocalisation du robot
+*
+* AUTEUR : ANTUNES / GROLLET / BAILLY
+* VERSION CVS : V2
+* DATE : 18/06/20
+*
+***************************************************************/
+
 
 CForet::CForet(std::string _forest_name)
 {
@@ -23,6 +38,16 @@ CForet::~CForet()
 		forest_descriptor->close();
 	free(forest_descriptor);
 }
+
+/**************************************************************
+* METHODE : CForet::instantiateGraph()
+* PRESENTATION : Instancie et alloue la mémoire necessaire pour la carte
+* ENTREES :  ----------------------------------------------------
+*
+* SORTIES :  ----------------------------------------------------
+*
+* RETOUR  : 1 s'il n'y a pas d'erreur
+* **************************************************************/
 
 bool CForet::instantiateGraph()
 {
@@ -67,6 +92,16 @@ bool CForet::instantiateGraph()
 	graph = (forest_elts **) malloc(nbr_cols * nbr_lines);
 	return true;
 }
+
+/**************************************************************
+* METHODE : CForet::buildGraph()
+* PRESENTATION : Construit la carte
+* ENTREES :  ----------------------------------------------------
+*
+* SORTIES :  ----------------------------------------------------
+*
+* RETOUR  : 1 s'il n'y a pas d'erreur
+* **************************************************************/
 
 bool CForet::buildGraph( )
 {
@@ -136,6 +171,16 @@ bool CForet::buildGraph( )
 	return true;
 }
 
+
+/**************************************************************
+* METHODE : void CForet::printGraph()
+* PRESENTATION : Affiche la carte
+* ENTREES :  ----------------------------------------------------
+*
+* SORTIES :  ----------------------------------------------------
+*
+* RETOUR  :  ----------------------------------------------------
+* **************************************************************/
 void CForet::printGraph()
 {
 	if (nbr_cols == 0 || nbr_lines == 0) 

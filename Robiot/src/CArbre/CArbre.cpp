@@ -1,17 +1,17 @@
-/***************************************************************
-* Copyright (c) ILift - contrat n� 000000001
+/**************************************************************
+*
 * Reproduction et diffusion interdites.
-* Developpe par Nous
-* Projet Robiot
+* Developpé par INSA Rennes - 5 CDTI : ANTUNES / GROLLET / BAILLY
+* Projet ROBIOT
 *
-* SUB-SYSTEME   : user
-* SOURCE        : user.cpp
-* PRESENTATION  : provide user object
+* SOURCE : CArbre.cpp
+* PRESENTATION : Fichiersource de la sélection de la gestion des arbres
 *
-* AUTHOR        : rhenry
-* VERSION CVS   : V0.9
-* DATE          : 22/01/2020
-* ***************************************************************/
+* AUTEUR : ANTUNES / GROLLET / BAILLY
+* VERSION CVS : V2
+* DATE : 23/06/20
+*
+***************************************************************/
 
 #include "CArbre.h"
 
@@ -23,13 +23,11 @@ CArbre::CArbre(const int coordonnee_X, const int coordonne_Y)
     this->f_isMesured = false;
 }
 /**************************************************************
-* METHODE : User::getDestination()
-* PRESENTATION : get the reference of the User
-* ENTREES :  N/A
+* METHODE : CArbre(const int coordonnee_X, const int coordonne_Y)
+* PRESENTATION : Constructeur de la classe CArbre
+* ENTREES :  ----------------------------------------------------
 *
-* SORTIES :  N/A
-*
-* RETOUR  : position de l'arbre
+* SORTIES :  ----------------------------------------------------
 *
 * **************************************************************/
 const s_Coordinates& CArbre::getPosition()
@@ -37,13 +35,13 @@ const s_Coordinates& CArbre::getPosition()
     return(this->s_position);
 }
 /**************************************************************
-* METHODE : Arbre::setMeasureStatus(bool newStatus)
-* PRESENTATION : put the Status of the measure on the tree
-* ENTREES :  bool newStatus
+* METHODE : coordonnees& CArbre::getPosition()
+* PRESENTATION : Retourne la position de l'arbre
+* ENTREES :  ----------------------------------------------------
 *
-* SORTIES :  N/A
+* SORTIES :  ----------------------------------------------------
 *
-* RETOUR  : N/A
+* RETOUR  : position de l'arbre
 *
 * **************************************************************/
 void CArbre::setMeasureStatus(bool newStatus)
@@ -54,12 +52,12 @@ void CArbre::setMeasureStatus(bool newStatus)
 }
 /**************************************************************
 * METHODE : Arbre::getMeasureStatus()
-* PRESENTATION : get the Status of the measure on Tree
-* ENTREES :  N/A
+* PRESENTATION : donne le statut de la mesure
+* ENTREES :  ----------------------------------------------------
 *
-* SORTIES :  N/A
+* SORTIES :  ----------------------------------------------------
 *
-* RETOUR  : Current State of the Measure done on the tree
+* RETOUR  : Etat courrant de la mesure
 *
 * **************************************************************/
 bool CArbre::getMeasureStatus()
