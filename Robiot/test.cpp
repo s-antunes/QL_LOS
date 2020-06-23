@@ -36,28 +36,6 @@ TEST(TestS_Coordinates, OverloadNonEqualOperator) {
 	EXPECT_NE(s, s2);
 }
 
-//TEST overload for s_Cost
-
-TEST(TestS_Cost, OverloadEqualOperator) {
-	s_Cost s = { 0,0.0 };
-	s_Cost s2 = { 0,0.0 };
-	EXPECT_EQ(s, s2);
-
-	s = { 10,-2.0 };
-	s2 = { 10,-2.0 };
-	EXPECT_EQ(s, s2);
-}
-
-TEST(TestS_Cost, OverloadNonEqualOperator) {
-	s_Cost s = { 0,0 };
-	s_Cost s2 = { 0,0 };
-	EXPECT_EQ(s, s2);
-
-	s = { 0,-2 };
-	s2 = { 9651,-2 };
-	EXPECT_NE(s, s2);
-}
-
 
 //TESTS CArbre
 
@@ -84,41 +62,6 @@ TEST(TestCArbre, CArbreTestMeasureTrue) {
 	arbre.setMeasureStatus(true);
 	EXPECT_EQ(arbre.getMeasureStatus(), true);
 	EXPECT_NE(arbre.getMeasureStatus(), false);
-}
-
-//Test CRobot
-TEST(TestCRobiot, CRobiotDefaultCreationTest) {
-	CRobiot robiot;
-	s_Coordinates s = { 0,0 };
-	EXPECT_EQ(robiot.getPosition(), s);
-}
-
-TEST(TestCRobiot, CRobiotCreationTest) {
-	CRobiot robiot(1, 2);
-	s_Coordinates s = { 1,2 };
-	EXPECT_EQ(robiot.getPosition(), s);
-}
-
-TEST(TestCRobiot, CRobiotTestMeasureEQ) {
-	CRobiot robiot(0, 0);
-	CArbre arbre(0, 0);
-	s_Cost CostMeasure= { 5.0 * 60.0,30.0 * 5.0 * 60.0 };
-	EXPECT_EQ(robiot.getMeasureOnTree(&arbre), CostMeasure);
-}
-
-TEST(TestCRobiot, CRobiotTestMeasureNE) {
-	CRobiot robiot(0, 0);
-	CArbre arbre(0, 0);
-	s_Cost CostMeasure = { 0,0};
-	EXPECT_NE(robiot.getMeasureOnTree(&arbre), CostMeasure);
-}
-
-TEST(TestCRobiot, CRobiotTestMeasure) {
-	CRobiot robiot(0, 0);
-	CArbre arbre(0, 0);
-	s_Cost CostMeasure = { 0,0 };
-	robiot.getMeasureOnTree(&arbre);
-	EXPECT_EQ(robiot.getMeasureOnTree(&arbre), CostMeasure);
 }
 
 

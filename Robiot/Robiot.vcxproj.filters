@@ -9,16 +9,10 @@
     <ClCompile Include="src\CForet\CForet.cpp">
       <Filter>Src\CForet</Filter>
     </ClCompile>
-    <ClCompile Include="src\CRobiot\CRobiot.cpp">
-      <Filter>Src\CRobiot</Filter>
-    </ClCompile>
     <ClCompile Include="src\SMesure\SMesure.cpp">
       <Filter>Src\SMesure</Filter>
     </ClCompile>
     <ClCompile Include="src\SCoordinates\SCoordinates.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\SCost\SCost.cpp">
       <Filter>Src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -30,16 +24,10 @@
     <ClInclude Include="src\CForet\CForet.h">
       <Filter>Src\CForet</Filter>
     </ClInclude>
-    <ClInclude Include="src\CRobiot\CRobiot.h">
-      <Filter>Src\CRobiot</Filter>
-    </ClInclude>
     <ClInclude Include="src\SMesure\SMesure.h">
       <Filter>Src\SMesure</Filter>
     </ClInclude>
     <ClInclude Include="src\SCoordinates\SCoordinates.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\SCost\SCost.h">
       <Filter>Src</Filter>
     </ClInclude>
   </ItemGroup>
@@ -55,9 +43,6 @@
     </Filter>
     <Filter Include="Src\CForet">
       <UniqueIdentifier>{aeaf7dc5-b645-41dc-abf5-9732adf85597}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Src\CRobiot">
-      <UniqueIdentifier>{2e902681-652f-4bc0-9c01-83fa5fb212de}</UniqueIdentifier>
     </Filter>
     <Filter Include="Src\SMesure">
       <UniqueIdentifier>{4f8545fa-4f59-44ab-8347-067811261d46}</UniqueIdentifier>
