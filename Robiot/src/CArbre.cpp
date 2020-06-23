@@ -18,7 +18,7 @@
 
 static const char* __cvs_id = "@(#) $Header$";
 
-CArbre::CArbre(const int coordonnee_X, const int coordonne_Y)
+CArbre::CArbre(const int coordonnee_X, const int coordonne_Y) // Création d'un arbre
 {
     this->s_position = { coordonnee_X, coordonne_Y };
     this->f_isMesured = false;

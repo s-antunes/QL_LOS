@@ -48,7 +48,7 @@ int CCommande::Nbrtree()
 int CCommande::ReadList()
 {
 	ifstream file;
-	file.open("Coordonnees");
+	file.open("");
 	if (file) {
 		do{
 			for (int i = 0; i < tabCoordonnees.size(); i++) {
