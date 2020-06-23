@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="test.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="src\CArbre\CArbre.cpp">
+      <Filter>Src\CArbre</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CForet\CForet.cpp">
+      <Filter>Src\CForet</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CRobiot\CRobiot.cpp">
+      <Filter>Src\CRobiot</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SMesure\SMesure.cpp">
+      <Filter>Src\SMesure</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SCoordinates\SCoordinates.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SCost\SCost.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="src\CArbre\CArbre.h">
+      <Filter>Src\CArbre</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CForet\CForet.h">
+      <Filter>Src\CForet</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CRobiot\CRobiot.h">
+      <Filter>Src\CRobiot</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SMesure\SMesure.h">
+      <Filter>Src\SMesure</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SCoordinates\SCoordinates.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SCost\SCost.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Src">
+      <UniqueIdentifier>{91049435-2901-48f9-8ebc-44d25032fbac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\CArbre">
+      <UniqueIdentifier>{7a2f48e7-7f3d-4674-86ac-399b48af96da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\CForet">
+      <UniqueIdentifier>{aeaf7dc5-b645-41dc-abf5-9732adf85597}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\CRobiot">
+      <UniqueIdentifier>{2e902681-652f-4bc0-9c01-83fa5fb212de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\SMesure">
+      <UniqueIdentifier>{4f8545fa-4f59-44ab-8347-067811261d46}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,25 +1,6 @@
-#include "pch.h"
-#include "CCompas.h"
+#include "CForet.h"
 
-
-/**************************************************************
-*
-* Reproduction et diffusion interdites.
-* Developpé par INSA Rennes - 5 CDTI : ANTUNES / GROLLET / BAILLY
-* Projet ROBIOT
-*
-* SOURCE : CCommande.cpp
-* PRESENTATION : Fichier source de la sélection de la géolocalisation du robot
-*
-* AUTEUR : ANTUNES / GROLLET / BAILLY
-* VERSION CVS : V2
-* DATE : 18/06/20
-*
-***************************************************************/
-
-#include "CCompas.h"
-
-CCompas::CCompas(std::string _forest_name)
+CForet::CForet(std::string _forest_name)
 {
 	forest_name = _forest_name;
 	if (!buildGraph())
@@ -30,7 +11,7 @@ CCompas::CCompas(std::string _forest_name)
 	trees = *new std::vector<CArbre*>;
 }
 
-CCompas::~CCompas()
+CForet::~CForet()
 {
 	free(graph);
 	for (std::vector<CArbre*>::iterator it = trees.begin(); it != trees.end(); ++it)
@@ -38,22 +19,12 @@ CCompas::~CCompas()
 		free(*it);
 	}
 	free(&trees);
-	if (forest_descriptor->bad())
+	if(forest_descriptor->bad())
 		forest_descriptor->close();
 	free(forest_descriptor);
 }
 
-/**************************************************************
-* METHODE : CCompas::instantiateGraph()
-* PRESENTATION : Instancie et alloue la mémoire necessaire pour la carte
-* ENTREES :  ----------------------------------------------------
-*
-* SORTIES :  ----------------------------------------------------
-*
-* RETOUR  : 1 s'il n'y a pas d'erreur
-* **************************************************************/
-
-bool CCompas::instantiateGraph()
+bool CForet::instantiateGraph()
 {
 	char readch;
 	int col_counter = 0;
@@ -63,9 +34,9 @@ bool CCompas::instantiateGraph()
 	while (readch != EOF)
 	{
 		if (readch == '\r' || readch == '\n')
-		{
+		{ 
 			//Cross '\n' by a call to .get() method if the file has been edited under Windows
-			if (forest_descriptor->get() != '\n')
+			if(forest_descriptor->get() != '\n')
 			{
 				//Manage case "\r" or "\nX" with X any character other than
 				forest_descriptor->seekg(forest_descriptor->cur - 1);
@@ -93,33 +64,22 @@ bool CCompas::instantiateGraph()
 		forest_descriptor->get(readch);
 	}
 
-	graph = (forest_elts**)malloc(nbr_cols * nbr_lines);
+	graph = (forest_elts **) malloc(nbr_cols * nbr_lines);
 	return true;
 }
 
-/**************************************************************
-* METHODE : CCompas::instantiateGraph()
-* PRESENTATION : Construit la carte 
-* ENTREES :  ----------------------------------------------------
-*
-* SORTIES :  ----------------------------------------------------
-*
-* RETOUR  : 1 s'il n'y a pas d'erreur
-* **************************************************************/
-
-
-bool CCompas::buildGraph()
+bool CForet::buildGraph( )
 {
 	std::string the_way_to_the_forest = PATH_TO_FOREST + forest_name;
 	forest_descriptor = new std::ifstream(the_way_to_the_forest, std::ifstream::in);
-	if (forest_descriptor->good())
+	if ( forest_descriptor->good() )
 	{
 		if (instantiateGraph())
 		{
 			forest_descriptor->seekg(forest_descriptor->beg);
 			for (int linecounter = 0; linecounter < nbr_lines; linecounter++)
 			{
-				for (int colcounter = 0; colcounter < nbr_cols + 1; colcounter++)
+				for (int colcounter = 0; colcounter < nbr_cols+1; colcounter++)
 				{
 					switch (forest_descriptor->get())
 					{
@@ -176,20 +136,9 @@ bool CCompas::buildGraph()
 	return true;
 }
 
-
-/**************************************************************
-* METHODE : void CCompas::printGraph()
-* PRESENTATION : Affiche la carte
-* ENTREES :  ----------------------------------------------------
-*
-* SORTIES :  ----------------------------------------------------
-*
-* RETOUR  :  ----------------------------------------------------
-* **************************************************************/
-
-void CCompas::printGraph()
+void CForet::printGraph()
 {
-	if (nbr_cols == 0 || nbr_lines == 0)
+	if (nbr_cols == 0 || nbr_lines == 0) 
 	{
 		std::cout << "The Graph is empty";
 		return;
@@ -208,21 +157,11 @@ void CCompas::printGraph()
 	}
 }
 
-/*************************************************************
-*METHODE : CCompas::printTrees()
-* PRESENTATION : Construit les arbres
-* ENTREES : ----------------------------------------------------
-*
-* SORTIES : ----------------------------------------------------
-*
-* RETOUR :  ----------------------------------------------------
-* **************************************************************/
-
-void CCompas::printTrees()
+void CForet::printTrees()
 {
 	for (std::vector<CArbre*>::iterator it = trees.begin(); it != trees.end(); ++it)
 	{
-		std::cout << "Tree at coordinates" << (*it)->getPosition().x << ", " << (*it)->getPosition().y;
+		std::cout << "Tree at coordinates" << (*it)->getPosition().i_X << ", " << (*it)->getPosition().i_Y;
 		if ((*it)->getMeasureStatus())
 			std::cout << " : MEASURED";
 		else

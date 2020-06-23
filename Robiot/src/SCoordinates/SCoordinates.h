@@ -1,5 +1,5 @@
-#ifndef __SCOORDINATES_H__
-#define __SCOORDINATES_H__
+#ifndef SCOORDINATES_H
+#define SCOORDINATES_H
 
 struct s_Coordinates {
     int i_X;
